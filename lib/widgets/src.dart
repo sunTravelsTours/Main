@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CardView extends StatefulWidget {
   const CardView({Key? key}) : super(key: key);
@@ -18,10 +19,15 @@ class _CardViewState extends State<CardView> {
             // padding: EdgeInsets.only(left: 30),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              InteractiveCard(
-                title: cards[0].title,
-                description: cards[0].description,
-                image: cards[0].image,
+              GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).pushNamed("tourpage");
+                },
+                child: InteractiveCard(
+                  title: cards[0].title,
+                  description: cards[0].description,
+                  image: cards[0].image,
+                ),
               ),InteractiveCard(
                 title: cards[1].title,
                 description: cards[1].description,

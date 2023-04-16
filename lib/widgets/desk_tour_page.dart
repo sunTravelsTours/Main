@@ -1,38 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:sun_t_t/widgets/footer.dart';
-import 'package:sun_t_t/widgets/places_list.dart';
-import 'package:sun_t_t/widgets/src.dart';
-import 'package:sun_t_t/widgets/welcome.dart';
 
-class DesktopView extends StatelessWidget {
-  const DesktopView({Key? key}) : super(key: key);
+class DeskTourPage extends StatelessWidget {
+  const DeskTourPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          Welcome(),
-          Container(
-            height: 300,
-            child: Center(
-              child: Text(
-                "Some of the Tours that we offer:",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+    return Scaffold(body: LayoutBuilder(
+      builder: (context, constraints) {
+        return ListView(children: [
+          Stack(
+            children: [
+              Container(
+                  color: Colors.black26.withOpacity(0.5),
+                  child: Image(
+                    image: AssetImage("images/woman_desert.jpeg"),
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  )),
+              Positioned(
+                child: Image.asset("assets/images/make-trip-easy-logo.png"),
+                left: 20,
+                top: 10,
+                height: 120,
+                width: 200,
               ),
-            ),
+              Positioned(
+                child: Text(
+                  "Incredible Dubai",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                top: constraints.maxWidth/3,
+                left: constraints.maxWidth/13,
+              )
+            ],
           ),
-          CardView(),
-          //why choose us
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Why Choose Us",
+                    "Why Choose Us",
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w600,
@@ -78,11 +89,9 @@ class DesktopView extends StatelessWidget {
                 )
               ],
             ),
-          ),
-          SizedBox(height: 200,),
-          Footer(),
-        ],
-      ),
-    );
+          )
+        ]);
+      },
+    ));
   }
 }

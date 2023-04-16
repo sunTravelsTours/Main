@@ -22,7 +22,7 @@ class HomeViewstful extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body:ResponsiveLayout(
           Mobilebody: MobileView(),
           Tabletbody: TabletView(),

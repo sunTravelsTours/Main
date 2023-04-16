@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sun_t_t/routes/route_config.dart';
 import 'package:sun_t_t/views/home/home_view.dart';
 import 'package:sun_t_t/widgets/navigation_bar/navigation_bar.dart';
 import 'package:sun_t_t/widgets/places_list.dart';
@@ -21,13 +22,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routeInformationParser: MyAppRouter().router.routeInformationParser,
+      routerDelegate: MyAppRouter().router.routerDelegate,
       title: 'Sun Travels and Tours',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      // home: HomeView(),
     );
   }
 }

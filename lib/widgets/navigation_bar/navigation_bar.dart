@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sun_t_t/routes/route_config.dart';
 import 'package:sun_t_t/widgets/OnHover.dart';
+import 'package:go_router/go_router.dart';
 
 class navigationBar extends StatelessWidget {
   const navigationBar({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class navigationBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-              padding: EdgeInsets.only(left: 40,top: 10,bottom: 10),
+              padding: EdgeInsets.only(left: 40, top: 10, bottom: 10),
               child: Image.asset('assets/images/make-trip-easy-logo.png')),
           Row(
             children: [
@@ -24,10 +26,10 @@ class navigationBar extends StatelessWidget {
                 builder: (isHovered) {
                   return Text(
                     "Home",
-                    style: TextStyle(fontSize: 20,
+                    style: TextStyle(
+                        fontSize: 20,
                         fontWeight: FontWeight.w200,
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                   );
                 },
               ),
@@ -38,10 +40,10 @@ class navigationBar extends StatelessWidget {
                 builder: (isHovered) {
                   return Text(
                     "Tours",
-                    style: TextStyle(fontSize: 20,
+                    style: TextStyle(
+                        fontSize: 20,
                         fontWeight: FontWeight.w200,
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                   );
                 },
               ),
@@ -52,10 +54,10 @@ class navigationBar extends StatelessWidget {
                 builder: (isHovered) {
                   return Text(
                     "About Us",
-                    style: TextStyle(fontSize: 20,
+                    style: TextStyle(
+                        fontSize: 20,
                         fontWeight: FontWeight.w200,
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                   );
                 },
               ),
