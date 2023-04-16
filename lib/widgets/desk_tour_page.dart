@@ -39,6 +39,7 @@ class DeskTourPage extends StatelessWidget {
             ],
           ),
           Container(
+            width: constraints.maxWidth,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
